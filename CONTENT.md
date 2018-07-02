@@ -1,0 +1,42 @@
+# CONTENT
+
+## List of topics
+
+- Introduction to security
+- Security on the internet
+    - Facebook privacy settings
+    - 2FA
+- The Internet
+    - OSI model, TCP/IP model
+    - DNS
+    - IP
+        - Routing
+        - Public IP
+        - Private IP
+        - IANA
+    - MAC
+- Linux basic
+    - OverTheWire
+- Secure coding
+    - Introduction to low-level stuffs
+        - Compilation
+        - Machine code
+        - Instruction sets
+        - x86
+        - The memory    
+    - Buffer Overflow
+- World Wide Web
+    - HTTP
+    - Authentication
+    - Common vulnerabilities
+        - Injection
+            - SQL injection
+            - XSS
+        - Logical vulns
+- Resources
+    - Social media
+        - Twitter
+        - Reddit
+        - Slack
+        - Facebook groups
+    - CTFTime
