@@ -1,12 +1,14 @@
-# CONTENT
+# Security At HSGS
+
+**Disclaimer: Nội dung của workshop này chỉ dành cho mục đích giáo dục. Người sử dụng tài nguyên từ các nội dung này hoàn toàn tự chịu trách nhiệm về các vấn đề pháp lý trước pháp luật.**
 
 ## List of topics
 
 - Introduction to security
-- Security on the internet
-    - Facebook privacy settings
-    - 2FA
-- The Internet
+    - Security on the internet
+        - Facebook privacy settings
+        - 2FA
+- Networking
     - OSI model, TCP/IP model
     - DNS
     - IP
@@ -17,7 +19,7 @@
     - MAC
 - Linux basic
     - OverTheWire
-- Secure coding
+- Secure coding/Reverse Engineering and Exploit Development
     - Introduction to low-level stuffs
         - Compilation
         - Machine code
