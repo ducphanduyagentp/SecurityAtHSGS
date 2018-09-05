@@ -70,3 +70,8 @@
 ### Reverse Engineering - Binary Exploitation
 
 ### Web
+
+## Credits
+
+- RITSEC (formerly RC3 and SPARSA) for inspiring me to do this
+- Lương Thế Minh Quang (quangio, quangltm, ...) for some web challenges: https://www.linkedin.com/in/quangluongtm/
