@@ -59,7 +59,7 @@
 
 ### Practice
 
-- SHSGS CTF: http://shsgs.simpleguy.tech
+- SHSGS CTF: https://shsgs.simpleguy.tech
 
 ## Resources
 
