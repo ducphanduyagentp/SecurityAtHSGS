@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Spiderweb v1.0 ;) </title>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    </head>
+
+    <body>
+        <script>
+            function myEscape(s) {
+                return '<script> var x = "' + s + "\"; var y = '" + s + "'; <\/script>";
+            }
+
+            $(document).ready(function() {
+                window.alert = (x) => {
+                    console.log("LOL I said an alert, not a console log.");
+                }
+                window.prompt = (x) => {
+                    console.log("LOL I said an alert, not a console log.");
+                }
+                window.confirm = (x) => {
+                    console.log("LOL I said an alert, not a console log.");
+                }
+                $("#testForm").submit( (e) => {
+                    let data = myEscape(document.getElementById("inp").value);
+                    $(data).appendTo(document.body);
+                    return false;
+                });
+            });
+        </script>
+        <!-- Web design is fucking hard. Dont judge me -->
+        <p> Pop an alert box on this website to win </p>
+        <br><br>
+        <p> Test your payload here </p>
+        <br><br>
+        <form id="testForm">
+            <input id="inp" type=textarea name="testInput" >
+            <br><br>
+            <input id="btn-submit" type=submit value="Test payload" >
+        </form>
+        <br><br>
+        <div id="helloName"></div>
+        <p> Submit your working payload here </p>
+        <br><br>
+        <form action="/checkSolution" method=POST>
+            <input type=hidden name="level" value="4">
+            <input type=textarea name="inputToCheck">
+            <br><br>
+            <input type=submit value="Submit payload">
+        </form>
+    </body>
+</html>

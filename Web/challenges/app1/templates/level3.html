@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Spiderweb v1.0 ;) </title>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    </head>
+
+    <body>
+        <script>
+            function myEscape(s) {
+                if (s.indexOf("script") != -1) {
+                    return '<div> LOL you payload sucks </div>'
+                }
+                s = s.toLowerCase();
+                s = s.replace('<script>', '');
+                s = s.replace('<\/script>', '');
+
+                return '<div> Hello ' + s + '<\/div>';
+            }
+
+            $(document).ready(function() {
+                $("#testForm").submit( (e) => {
+                    let data = myEscape(document.getElementById("inp").value);
+                    $(data).appendTo(document.body);
+                    return false;
+                });
+            });
+        </script>
+        <!-- Web design is fucking hard. Dont judge me -->
+        <p> Pop an alert box on this website to win </p>
+        <br><br>
+        <p> Test your payload here </p>
+        <br><br>
+        <form id="testForm">
+            <input id="inp" type=textarea name="testInput" >
+            <br><br>
+            <input id="btn-submit" type=submit value="Test payload" >
+        </form>
+        <br><br>
+        <div id="helloName"></div>
+        <p> Submit your working payload here </p>
+        <br><br>
+        <form action="/checkSolution" method=POST>
+            <input type=hidden name="level" value="3">
+            <input type=textarea name="inputToCheck">
+            <br><br>
+            <input type=submit value="Submit payload">
+        </form>
+    </body>
+</html>

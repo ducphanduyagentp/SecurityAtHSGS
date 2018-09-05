@@ -1,0 +1,107 @@
+<!-- Credit: quangltm -->
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Emacs > Vim </title>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    </head>
+
+    <body>
+        <script>
+         String.prototype.replaceAll = function(search, replacement) {
+             var target = this;
+             return target.replace(new RegExp(search, 'g'), replacement);
+         };
+         (function () {
+    /*
+    XSS prevention via JavaScript
+    */
+    var XSSObject = new Object();
+    XSSObject.lockdown = function (obj, name) {
+        if (!String.prototype.startsWith) {
+            try {
+                if (Object.defineProperty) {
+                    Object.defineProperty(obj, name, {
+                        configurable: false
+                    });
+                }
+            } catch (e) { };
+         }
+    }
+    XSSObject.proxy = function (obj, name, report_function_name, exec_original) {
+        var proxy = obj[name];
+        obj[name] = function () {
+            if (exec_original) {
+                return proxy.apply(this, arguments);
+            }
+            console.log("lol");
+        };
+        XSSObject.lockdown(obj, name);
+    };
+    XSSObject.proxy(window, 'alert', 'window.alert', false);
+    XSSObject.proxy(window, 'confirm', 'window.confirm', false);
+    XSSObject.proxy(window, 'prompt', 'window.prompt', false);
+    XSSObject.proxy(window, 'unescape', 'unescape', false);
+    XSSObject.proxy(window, 'open', 'window.open', false);
+    XSSObject.proxy(document, 'write', 'document.write', false);
+    XSSObject.proxy(String, 'fromCharCode', 'String.fromCharCode', false);
+         })();
+         window.onbeforeunload = function(){
+              return 'Are you sure you want to leave?';
+         };
+         function myEscape(s) {
+             s = s.replaceAll("<", "");
+             s = s.replaceAll("/", "");
+             s = s.replaceAll(">", "");
+             s = s.replaceAll('"',"");
+             s = s.replaceAll("'", "");
+             s = s.replaceAll("`", "");
+             s = s.replaceAll("=", "");
+             s = s.replaceAll(";", "");
+             s = s.replaceAll("&", "");
+             s = s.replace(/[a-zA-Z0-9]/g, '');
+             s = s.replace(/[^\x00-\x7F]/g, "");
+             s = s.toLowerCase();
+             if (s.indexOf("on") != -1 || s.indexOf("script") != -1 || s.indexOf("eval") != -1 || s.indexOf("load") != -1 || s.indexOf("%") != -1 || s.indexOf("#") != -1) {
+                 console.log("duh");
+                 return;
+             }
+             // this filter is secure as fck
+
+                return "<script>" + s + "<\/script>";
+            }
+
+            $(document).ready(function() {
+                $("#testForm").submit( (e) => {
+                    e.preventDefault();
+                    let data = myEscape($("#inp").val());
+                    $(data).appendTo(document.body);
+                    return false;
+                });
+            });
+        </script>
+        <!-- Web design is fucking hard. Dont judge me -->
+        <!-- I am judging you. Jesus Duc -->
+        <p> Pop an alert box on this website to win </p>
+        <br><br>
+        <p> Test your payload here </p>
+        <br><br>
+        <form id="testForm">
+            <input id="inp" type=textarea name="testInput" >
+            <br><br>
+            <input id="btn-submit" type=submit value="Test payload" >
+        </form>
+        <br><br>
+        <div id="helloName"></div>
+        <p> Submit your working payload here </p>
+        <br><br>
+        <form action="/checkSolution" method=POST>
+            <input type=hidden name="level" value="6">
+            <input type=textarea name="inputToCheck">
+            <br><br>
+            <input type=submit value="Submit payload">
+        </form>
+    </body>
+</html>
+
