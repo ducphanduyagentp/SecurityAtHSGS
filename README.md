@@ -16,6 +16,7 @@
         - Public IP
         - Private IP
         - IANA
+        - NAT
     - MAC
 - Linux basic
     - OverTheWire
@@ -42,3 +43,30 @@
         - Slack
         - Facebook groups
     - CTFTime
+
+## Workshop Materials
+
+### Presentations
+
+- Linux: https://docs.google.com/presentation/d/1pQMrvbaM3JC5G1XPKarolhFB9_8BhLqaGJLnPX6kKR8/edit?usp=sharing
+- Networking: https://docs.google.com/presentation/d/1PEwDaqexqWHacNl_5Y166wQMMPUdHNNIpDB1L-skQuY/edit?usp=sharing
+- Reverse Engineering: https://docs.google.com/presentation/d/1xQOWMiC4OEt1h6leEoJossBUxqJJTTIxoUJMXrjjStk/edit?usp=sharing
+- Web: https://docs.google.com/presentation/d/1CdhWRSPPOaubp8-_iCIGzDV7H6uw4TWGqOnASE5XOiY/edit?usp=sharing
+
+### Live Stream
+
+- Live Streams can be found in Security@HSGS Group on Facebook: https://www.facebook.com/groups/605031313214665/videos/
+
+### Practice
+
+- SHSGS CTF: http://shsgs.simpleguy.tech
+
+## Resources
+
+### Linux
+
+### Networking
+
+### Reverse Engineering - Binary Exploitation
+
+### Web
