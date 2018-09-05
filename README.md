@@ -73,5 +73,5 @@
 
 ## Credits
 
-- RITSEC (formerly RC3 and SPARSA) for inspiring me to do this
+- RITSEC (formerly RC3 and SPARSA) for inspiring me to do this: https://www.ritsec.club/
 - Lương Thế Minh Quang (quangio, quangltm, ...) for some web challenges: https://www.linkedin.com/in/quangluongtm/
