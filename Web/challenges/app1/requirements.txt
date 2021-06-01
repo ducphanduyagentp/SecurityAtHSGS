@@ -4,5 +4,5 @@ itsdangerous==0.24
 Jinja2==2.10
 MarkupSafe==1.0
 selenium==3.14.0
-urllib3==1.23
+urllib3==1.26.5
 Werkzeug==0.14.1
